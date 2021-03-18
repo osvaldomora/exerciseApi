@@ -1,4 +1,6 @@
-CREATE TABLE IF NOT EXISTS programming_languages (
+DROP ALL OBJECTS DELETE FILES;
+
+CREATE TABLE programming_languages (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   name VARCHAR(200) NOT NULL
 );
@@ -23,18 +25,18 @@ INSERT INTO developer (name) VALUES
   ('Yukihiro');
   
 CREATE TABLE programming_languages_developer (
-  id_developer int(6) unsigned NOT NULL,
-  id_programming_language int(3) unsigned NOT NULL,
-   PRIMARY KEY (id_developer, id_programming_language),
-   FOREIGN KEY (id_developer)
+  developer_id int(6) unsigned NOT NULL,
+  programming_language_id int(3) unsigned NOT NULL,
+   PRIMARY KEY (developer_id, programming_language_id),
+   FOREIGN KEY (developer_id)
       REFERENCES developer(id)
       ON UPDATE CASCADE ON DELETE RESTRICT,
-  FOREIGN KEY (id_programming_language)
+  FOREIGN KEY (programming_language_id)
       REFERENCES programming_languages(id)
       ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
-INSERT INTO programming_languages_developer (id_developer, id_programming_language) VALUES
+INSERT INTO programming_languages_developer (developer_id, programming_language_id) VALUES
   ('1', '2'),
   ('2', '2'),
   ('3', '2'),
