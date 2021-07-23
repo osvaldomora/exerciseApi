@@ -38,6 +38,16 @@ public class DeveloperServiceImpl implements IDeveloperService {
 
 	@Override
 	public Collection<DeveloperDTO> findAllAndShowIfKnowPupularPrograminLanguage() {
+		
+	List<Developer>	 list =developerRepository.findAll();
+	list.get(0).getProgrammingLanguages();
+//	     list.stream().filter()
+		//obtener los id´s(programming_language_id) mas frecuentes.
+		//en base a ello realizando el conteo se obtendra el lenguaje que mas se repite.
+		//despues de ello ya sabemos que id es el que mas se repite.
+		//realizar una validación si, el desarrollador tiene el id, quiere decir que si lo conoce, en otro caso no.
+		
+		
 		// TODO Obtener la lista de todos los desarrolladores existentes en la BD e
 		// indicar si el desarrollador conoce o no el lenguaje de programacion mas
 		// popular registrado en la BD.

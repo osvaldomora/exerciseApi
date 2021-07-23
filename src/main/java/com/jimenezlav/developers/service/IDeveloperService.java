@@ -8,5 +8,8 @@ public interface IDeveloperService {
 	Collection<DeveloperDTO> findAll();
 
 	Collection<DeveloperDTO> findAllAndShowIfKnowPupularPrograminLanguage();
+	
+	
+	//select name from programming_languages_developer innerjoin programming_languages
 
 }
